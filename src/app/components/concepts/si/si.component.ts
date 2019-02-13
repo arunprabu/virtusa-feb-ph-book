@@ -16,11 +16,6 @@ export class SiComponent implements OnInit {
     'html', 'css', 'js', 'ng'
   ];
 
-  myProfile: Object = {
-    name: "Arun",
-    city: "Chennai"
-  };
-
   constructor() { }
 
   ngOnInit() {

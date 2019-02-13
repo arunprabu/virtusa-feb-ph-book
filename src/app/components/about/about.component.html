@@ -1,0 +1,75 @@
+<div>
+  <h1>Reactive Forms </h1>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-10">
+        <div class="jumbotron">
+          <h2>Angular 7 Reactive Forms with validation</h2>
+          <form name="form" [formGroup]="contactForm">           <!-- step 4 -->
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <!-- step 5 - add formControlName for the inputs and do the same for all other inputs also -->
+
+              <input type="text" class="form-control" required formControlName="firstName" 
+              [ngClass]="{ 'is-invalid': contactForm.get('firstName').touched && contactForm.get('firstName').invalid }"/>
+              <div class="invalid-feedback">
+                <div>First Name is required</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" class="form-control" required formControlName="lastName" 
+              [ngClass]="{'is-invalid': contactForm.get('lastName').touched && contactForm.get('lastName').invalid}"/>
+              <div class="invalid-feedback">
+                <div>Last Name is required</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" class="form-control"  formControlName="email" 
+                [ngClass]="{'is-invalid': contactForm.get('email').touched && contactForm.get('email').invalid}"
+                  required />
+                <div *ngIf="contactForm.get('email').touched && contactForm.get('email').invalid" class="invalid-feedback">
+                  <div *ngIf="contactForm.get('email').errors.required">Email is required</div>
+                  <div *ngIf="contactForm.get('email').errors.email">Email seems to be not valid</div>
+                </div>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" formControlName="password"/>
+              <div *ngIf="contactForm.get('password').touched && contactForm.get('password').invalid" class="invalid-feedback">
+                <div *ngIf="contactForm.get('password').errors.required">Password is required</div>
+                <div *ngIf="contactForm.get('password').errors.minlength">Password must be at least 6 characters</div>
+              </div>
+
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<div>
+  <h1>Pipes</h1>
+  <p>The hero's birthday is {{ birthday }}</p>
+
+  <p>The hero's birthday is {{ birthday | date }}</p>
+
+  <p>The hero's birthday is {{ birthday | date: 'MMM/dd/yyyy - hh:mm:ss a'}}</p>
+
+
+  <h2> custom pipe </h2>
+  <p>{{ loremIpsum }}</p>
+
+  <p>with pipes</p>
+  <p>{{ loremIpsum | ellipsis }}</p>
+  <p>{{ loremIpsum | ellipsis: '60' }}</p>
+  <p>{{ loremIpsum | ellipsis: '120' }}</p>
+</div>
