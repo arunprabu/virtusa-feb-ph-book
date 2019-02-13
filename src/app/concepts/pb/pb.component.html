@@ -1,0 +1,13 @@
+<!-- SI -->
+<input type="text" value="{{ featureName}}"> 
+
+<br><br>
+<!-- PB -->
+<input type="text" [value]="featureName">
+
+<div [ngClass]="{ 'red': !isAuth(), 'green': isAuth() }">
+  You have access
+</div>
+
+<!-- TODO: try ngStyle -->
+

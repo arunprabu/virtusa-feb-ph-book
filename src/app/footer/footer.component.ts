@@ -4,17 +4,20 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-footer',
   template: `
     <footer class="text-center bg-light">
-    <hr>
-    <app-nav></app-nav>
-    <p>Contact Manager App built in Training in 2018</p>
-    <p>
-      <a href="#">Back to top</a>
-    </p>
-    <p>Copyright &copy; 2018</p>
-  </footer>
+      <hr>
+      <app-nav>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Back to Top</a>
+        </li>
+      </app-nav>
+      <p>Contact Manager App built in Training in 2018</p>
+      <p class="blue">Copyright &copy; 2018</p>
+    </footer>
   `,
   styles: [ `
-
+    .blue{
+      color: blue;
+    }
 
   `
   ]

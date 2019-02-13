@@ -1,0 +1,15 @@
+<div>
+  {{ featureName }}
+
+  <br>
+  <input type="text" value="{{ featureName}}">
+
+  <br>
+  <input type="text" [value]="featureName">
+
+  <br>
+  <!-- TWB  -->
+  <input type="text" 
+  [(ngModel)]="featureName">
+
+</div>

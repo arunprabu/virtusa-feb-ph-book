@@ -1,0 +1,7 @@
+<div>
+  <!-- the following will be not recognised -- check console -->
+  <button type="button" onclick="onTestClick()">Test</button>
+
+  <!-- the following will work -->
+  <button type="button" (click)="onTestClick($event)">Testing in NG</button>
+</div>
